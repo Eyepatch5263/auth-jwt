@@ -3,7 +3,6 @@ package middlewares
 import ("github.com/gin-gonic/gin"
 	"net/http"
 	helper "github.com/eyepatch5263/auth_jwt/helpers"
-
 )
 
 func Authenticate() gin.HandlerFunc {

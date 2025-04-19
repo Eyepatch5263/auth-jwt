@@ -2,7 +2,6 @@ package helper
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"time"
 
@@ -102,11 +101,11 @@ func ValidateToken(signedToken string)(claims *SignedDetails,msg string){
 	}
 	claims,ok:=token.Claims.(*SignedDetails)
 	if !ok{
-		msg=fmt.Sprintf("TOken is invalid")
+		msg="Token is invalid"
 		return
 	}
 	if claims.ExpiresAt<time.Now().Local().Unix(){
-		msg=fmt.Sprintf("Token is expired")
+		msg="Token is expired"
 		return
 	}
 	return claims,msg
